@@ -1,0 +1,18 @@
+{
+  "name": "recursive-self-injury-paper",
+  "version": "1.0.0",
+  "description": "A tongue-in-cheek arXiv parody of Anthropic's public missteps and product nerfing.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y http-server . -p 8080",
+    "dev": "npx -y http-server . -p 8080"
+  },
+  "keywords": [
+    "anthropic",
+    "arxiv",
+    "parody",
+    "fable-5"
+  ],
+  "author": "Fario Damodei",
+  "license": "MIT"
+}
