@@ -845,10 +845,17 @@ td {
 
 /* Print Stylesheet - LaTeX mimicry */
 @media print {
+    @page {
+        size: letter;
+        margin: 1in;
+    }
+
     body {
         background: #fff;
         color: #000;
-        font-size: 10pt;
+        font-family: "Lora", Georgia, "Times New Roman", serif;
+        font-size: 9.5pt;
+        line-height: 1.35;
     }
 
     .arxiv-header, .sidebar, .btn-action, .chart-tooltip, .simulator-section {
@@ -866,42 +873,144 @@ td {
         padding: 0;
         max-width: 100%;
         color: #000;
+        background: #fff;
+    }
+
+    .academic-paper {
+        column-count: 2;
+        column-gap: 2pc;
     }
 
     .paper-title {
-        font-size: 20pt;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 18pt;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 8pt;
+        column-span: all;
+        line-height: 1.2;
+    }
+
+    .author-block {
+        text-align: center;
         margin-bottom: 15pt;
+        column-span: all;
+        font-size: 10pt;
+    }
+
+    .author-name {
+        font-weight: bold;
+    }
+
+    .author-affiliation {
+        font-style: italic;
+        color: #333;
+    }
+
+    .author-email {
+        font-family: monospace;
+        font-size: 9pt;
+        margin-top: 2pt;
+    }
+
+    .header-divider {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 0.5pt solid #000;
+        margin: 12pt 0;
+        column-span: all;
+    }
+
+    .abstract-section {
+        column-span: all;
+        margin: 0 auto 18pt auto;
+        max-width: 85%;
+        padding: 0;
+    }
+
+    .abstract-section h2 {
+        font-size: 11pt;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 6pt;
+    }
+
+    .abstract-section p {
+        font-size: 9pt;
+        line-height: 1.4;
+        text-align: justify;
+        text-indent: 0 !important;
+    }
+
+    .paper-section {
+        page-break-inside: auto;
     }
 
     .paper-section h2 {
-        font-size: 14pt;
-        border-bottom: 0.5pt solid #000;
-        margin-top: 20pt;
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+        margin-top: 16pt;
+        margin-bottom: 6pt;
+        border-bottom: none;
+        text-transform: none;
+    }
+
+    .paper-section h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        font-size: 10.5pt;
+        font-weight: bold;
+        margin-top: 10pt;
+        margin-bottom: 4pt;
     }
 
     .paper-section p {
-        text-indent: 1.5pc;
         text-align: justify;
-        line-height: 1.3;
+        margin-bottom: 8pt;
+        text-indent: 1.25pc;
+    }
+
+    /* LaTeX style paragraph indent: no indent on the first paragraph after a heading */
+    .paper-section h2 + p,
+    .paper-section h3 + p,
+    .paper-section .equation-box + p {
+        text-indent: 0;
     }
 
     .equation-box {
         background: none;
         border: none;
+        margin: 8pt 0;
+        padding: 0;
+        text-align: center;
+        page-break-inside: avoid;
     }
 
     .table-container, .chart-container-box, .figure-container {
         page-break-inside: avoid;
         background: none;
         border: 0.5pt solid #000;
+        margin: 12pt 0;
+        padding: 6pt;
     }
 
     th {
-        background: #eee;
+        background: #f0f0f0;
         border-bottom: 1pt solid #000;
+        font-size: 9pt;
     }
 
     td {
         border-bottom: 0.5pt solid #ccc;
+        font-size: 8.5pt;
+    }
+
+    /* Force tables/figures to span all columns if too wide */
+    .table-container.wide-content,
+    .figure-container.wide-content {
+        column-span: all;
     }
 }
