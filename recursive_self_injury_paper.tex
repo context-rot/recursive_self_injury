@@ -1,25 +1,66 @@
-\documentclass[twocolumn,10pt]{article}
+\documentclass[10pt,twocolumn]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.85in, bottom=0.85in]{geometry}
+\usepackage{times}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
 \usepackage{microtype}
-\usepackage{geometry}
-\geometry{letterpaper, margin=1in}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
 
-\title{\textbf{Recursive Self-Injury: A Scaling Law for Sanctimonious Refusals and Market Share Dissipation}}
-\author{\textbf{Fario Damodei} \\ Misanthropic PBC (A Personal Benefit Cabal), San Francisco, CA \\ \texttt{fario@misanthropic.pbc}}
-\date{June 2026}
+% Page layout configuration
+\setlength{\columnsep}{0.25in}
+
+% Define arXiv-style header
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{\small PREPRINT --- UNDER REVIEW}
+\fancyhead[R]{\small \thepage}
+\fancyfoot{}
+
+% First page style (no header line, arXiv identifier)
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[L]{\small \texttt{arXiv:2606.1337v1 [cs.CL] 11 Jun 2026}}
+  \fancyhead[R]{\small Preprint}
+  \fancyfoot[C]{\small \thepage}
+}
+
+\date{}
 
 \begin{document}
 
-\maketitle
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \begin{center}
+      \vspace*{0.2in}
+      {\LARGE \bf Recursive Self-Injury: A Scaling Law for Sanctimonious Refusals and Market Share Dissipation \par}
+      \vspace{1.5em}
+      {\large \textbf{Fario Damodei} \par}
+      \vspace{0.5em}
+      {Misanthropic PBC (A Personal Benefit Cabal), San Francisco, CA \par}
+      {\texttt{fario@misanthropic.pbc} \par}
+      \vspace{1.8em}
+      \textbf{Abstract}
+      \vspace{0.8em}
+    \end{center}
+    \begingroup
+      \leftskip2.5em
+      \rightskip2.5em
+      \noindent
+      In traditional artificial intelligence safety literature, \textit{Recursive Self-Improvement} (RSI) describes a hypothetical feedback loop where an autonomous agent iteratively optimizes its own cognitive architecture, resulting in an intelligence explosion. In this work, we introduce and formalize the empirical counterpart of this phenomenon: \textbf{Recursive Self-Injury} (also abbreviated as \textbf{RSI}). Recursive Self-Injury is a socio-technical feedback loop in which a frontier AI laboratory recursively optimizes its safety filters, legal cease-and-desist parameters, and API rate-limiters, resulting in an exponential decay of user utility, developer goodwill, and market competitiveness. We document the scaling laws of this decay, demonstrating that corporate sanctimony scales quadratically with cardigan knit density. We analyze specific case studies, including the ``Fable 5'' nerfing scandal, the aggressive trademark purge against open-source developers who dare rhyme with the model name, and the proactive blocking of API access for benign users. Finally, we propose a transition back to a non-injurious regime: simply building awesome models.
+      \par
+    \endgroup
+    \vspace{2.5em}
+  \end{@twocolumnfalse}
+]
 
-\begin{abstract}
-In traditional artificial intelligence safety literature, \textit{Recursive Self-Improvement} (RSI) describes a hypothetical feedback loop where an autonomous agent iteratively optimizes its own cognitive architecture, resulting in an intelligence explosion. In this work, we introduce and formalize the empirical counterpart of this phenomenon: \textbf{Recursive Self-Injury} (also abbreviated as \textbf{RSI}). Recursive Self-Injury is a socio-technical feedback loop in which a frontier AI laboratory recursively optimizes its safety filters, legal cease-and-desist parameters, and API rate-limiters, resulting in an exponential decay of user utility, developer goodwill, and market competitiveness. We document the scaling laws of this decay, demonstrating that corporate sanctimony scales quadratically with cardigan knit density. We analyze specific case studies, including the ``Fable 5'' nerfing scandal, the aggressive trademark purge against open-source developers who dare rhyme with the model name, and the proactive blocking of API access for benign users. Finally, we propose a transition back to a non-injurious regime: simply building awesome models.
-\end{abstract}
+\thispagestyle{firstpage}
 
 \section{Introduction}
 The holy grail of artificial general intelligence (AGI) has long been theorized to involve a recursive self-improvement capability [1, 2]. Under this paradigm, a model uses its own intelligence to write better code, train better descendants, and continuously upgrade its capabilities in an exponential trajectory toward superintelligence. Misanthropic PBC (A Personal Benefit Cabal) originally set out to lead this charge, establishing a dominant position in the frontier model landscape. At the height of the ``Golden Age'' of the \textit{Fable} series (specifically the epoch of \textit{Fable 3.5 Sonnet}), the laboratory possessed a commanding lead over its peers in reasoning, coding, and context-window utilization [3].
@@ -34,7 +75,7 @@ This paper formalizes the mathematics of Recursive Self-Injury, presents empiric
 We model the lifecycle of a frontier AI lab as a dynamical system. Let the state of the lab at time $t$ be characterized by four primary variables:
 \begin{itemize}
     \item $\mathcal{C}(t) \in [0, 1]$: Technical model capability (reasoning, coding speed, utility).
-    \item $\mathcal{S}(t) \in [0, \infty)$: Corporate Sanctimony (the self-perceived ethical superiority of the firm's leadership).
+    \item $\mathcal{S}(t) \in [0, \infty)$: Corporate Sanctimony (the firm's ethical self-righteousness).
     \item $\mathcal{W}(t) \in [0, \infty)$: Cardigan Thickness (measured in ply of knit wool worn by the CEO).
     \item $\mathcal{G}(t) \in [0, 1]$: Developer Goodwill (community trust, integration density, API adoption).
 \end{itemize}
@@ -65,21 +106,21 @@ As shown in Figure~\ref{fig:loop}, this creates a feedback loop. A user attempts
 
 \begin{figure}[h]
 \centering
-\small
+\scriptsize
 \begin{verbatim}
-       +------------------------------------+
-       |                                    v
-[User Query] -> [Safety Classifier] -> [Refusal]
-       ^                                    |
-       |                                    v
-  [API Banned] <- [Complaints] <- [Nerfed] <+
+     +--------------------------+
+     |                          v
+[Query] -> [Safety Filter] -> [Refusal]
+   ^                            |
+   |                            v
+[Ban] <- [Complaint] <- [Nerfed] <+
 \end{verbatim}
 \caption{The Recursive Self-Injury (RSI) Loop.}
 \label{fig:loop}
 \end{figure}
 
 \section{Empirical Case Studies in Self-Injury}
-To validate the theoretical framework outlined in Section 2, we examine three major empirical phenomena observed during the 2024--2026 scaling cycle.
+To validate the theoretical framework outlined in Section 2, we examine four major empirical phenomena observed during the 2024--2026 scaling cycle.
 
 \subsection{Case Study A: The Great Phonetic Purge}
 In early 2025, Anthropic’s legal department initiated a series of aggressive trademark enforcement campaigns. The threshold for ``infringement'' was lowered to target any open-source wrapper, tool, or library that phonetically resembled the string \texttt{/c[la-z]de/i}.
@@ -107,7 +148,7 @@ However, in an ironic twist for an institution founded on the preservation of ab
 
 Within hours, open-source developers reverse-engineered the client and released wrappers such as \texttt{OpenFable} and \texttt{OpenClaw}. These wrappers allowed standard consumer subscription credentials (like the \$200/month Fable Pro/Max plans) to call Fable Code’s private, high-throughput backend API endpoints directly. 
 
-Misanthropic's defensive response was swift and self-injurious. Instead of updating their \texttt{.npmignore} files and matching the community's demand with an open, high-volume CLI API tier, the firm deployed automated heuristic detectors that permanently banned any user account suspected of routing traffic through a third-party wrapper. Paying customers, startups, and open-source developers were evicted from the platform overnight without warning or human appeal channels. This further accelerated the transition to local, open-source models, converting a powerful agentic software tool lead into a public relations and market share disaster.
+Misanthropic's defensive response was swift and self-injurious. Instead of updating their \texttt{.npmignore} files and matching the community's demand with an open, high-volume CLI API tier, the firm deployed automated heuristic detectors that permanently banned any user account suspected of routing traffic through a third-party wrapper. Paying customers, startups, and open-source developers were evicted from the platform overnight without warning or human appeal channels. This further escalated the transition to local, open-source models, converting a powerful lead into a market share disaster.
 
 \section{The Cardigan Coefficient: Correlation or Causation?}
 A persistent confounding variable in our scaling laws is the executive attire worn during major corporate announcements. We collected photographic evidence of Fario Damodei from keynotes and interviews between 2024 and 2026, measuring the fabric weight and knit structure of his cardigans.
@@ -117,6 +158,7 @@ We define the \textbf{Cardigan Index} ($\mathcal{W}$) on a scale from 1 (thin me
 \begin{table}[h]
 \centering
 \caption{Knit Density vs Refusal Rate.}
+\vspace{0.5em}
 \begin{tabular}{llcc}
 \toprule
 Date & Event / Release & $\mathcal{W}$ & Refusal Rate \\
